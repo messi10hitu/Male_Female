@@ -1,0 +1,32 @@
+Heroku Deployment
+1.create a copy of clientApp.py to app.py and in app.py put this clApp = ClientApp() above if name == main
+
+2.pip install gunicorn
+
+3.gunicorn app:app
+
+4.create a procfile
+note == file name should be exactly same without extension
+
+5.add below lines to the Procfile
+web: gunicorn app:app
+
+6.create a runtime.txt file and inside it type
+python-3.6.10
+
+7.check the hidden files if there is .git then delete it
+
+8.do these git steps in the command prompt
+# first set the path of the project where it is installed
+# install git for windows
+# git init
+# git add -A   == it means add all we only have to do this step only for once and after that if we want to add we can type git add .
+# git add .
+# git commit -m "initial commit"
+
+9.steps for heroku
+# git clone https://github.com/heroku/python-getting-started.git
+# heroku create
+# git remote -v
+# git push heroku master
+# heroku logs  --tail
